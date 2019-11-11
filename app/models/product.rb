@@ -7,5 +7,5 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :daily_cost, presence: true
   validates :location, presence: true
-
+  validates :category, presence: true, inclusion: { in: %w(costumes vehicles furniture electronics decor books toys kitchenware tools miscellaneous) }
 end
