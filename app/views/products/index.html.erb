@@ -1,0 +1,16 @@
+<!-- index.html.erb -->
+<!-- render searchbar -->
+
+<div class="container">
+  <div class="container cards">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6">
+          <div class="product-card">
+            <p><%= product.title %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

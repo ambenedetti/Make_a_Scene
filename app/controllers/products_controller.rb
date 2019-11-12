@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
   def index
-     @products = policy_scope(Product)
+    @products = policy_scope(Product)
+    @products = Product.all
+  end
+
+  def search
   end
 
   def show
