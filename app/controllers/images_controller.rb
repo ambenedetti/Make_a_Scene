@@ -11,7 +11,7 @@ class ImagesController < ApplicationController
     @product = Product.find(params[:product_id])
     @image.product = @product
     authorize @image
-    if @product.save
+    if @image.save
       redirect_to product_path(@product)
     else
       render :new
