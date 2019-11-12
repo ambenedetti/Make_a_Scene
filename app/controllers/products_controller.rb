@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def search
+  end
+
   def show
   end
 

@@ -1,15 +1,16 @@
 <!-- index.html.erb -->
+<!-- render searchbar -->
 
-<div class="container cards">
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <o class= "card-title"> <%= cocktail.name %></p>
-          <p class="card-description"><%= cocktail.description %></p>
-          <a href="<%=product_path(product) %>">See more</a>
+<div class="container">
+  <div class="container cards">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6">
+          <div class="product-card">
+            <p><%= product.title %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
