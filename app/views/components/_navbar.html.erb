@@ -1,11 +1,29 @@
-<nav class="navbar">
-  <%= link_to root_path do %>
-  <span class="navbar-logo">Make A Scene</span>
-  <% end %>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search">
-    <button class="btn pink-button my-2 my-sm-0 mr-5" type="submit">Search</button>
-    <button class="btn pink-button m-2 pr-2 pl-2" type="submit">Sign In</button>
-    <button class="btn pink-button m-2 pr-2 pl-2" type="submit">Register</button>
-  </form>
-</nav>
+<% if user_signed_in? %>
+  <nav class="navbar">
+        <%= link_to root_path do %>
+        <span class="navbar-logo">Make A Scene</span>
+        <% end %>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search">
+          <button class="btn pink-button my-2 my-sm-0 mr-5" type="submit">Search</button>
+          <span>Hello <%= current_user.first_name %></span>
+        </form>
+      </nav>
+<% else %>
+    <nav class="navbar">
+      <%= link_to root_path do %>
+      <span class="navbar-logo">Make A Scene</span>
+      <% end %>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for a product" aria-label="Search">
+        <button class="btn pink-button my-2 my-sm-0 mr-5" type="submit">Search</button>
+        <%= link_to new_user_session_path do %>
+        <button class="btn pink-button m-2 pr-2 pl-2" type="button">Sign In</button>
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+        <button class="btn pink-button m-2 pr-2 pl-2" type="button">Register</button>
+        <% end %>
+      </form>
+    </nav>
+<% end %>
+
