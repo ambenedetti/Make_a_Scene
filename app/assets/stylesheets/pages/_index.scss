@@ -1,29 +1,3 @@
 // Import page-specific CSS files here.
 @import "home";
-
-.container {
-  background-color: white;
-}
-.cards {
-  width: 1200px;
-  height: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 200px;
-  background-color: #F9F4F4;
-  border-radius: 6px;
-}
-
-.product-card {
-  background-color: $white;
-  height: 100px;
-  width: 100px;
-  margin: 40px;
-}
-
-.searchbar {
-  background-color: black;
-  height: 50px;
-  display: flex;
-  justify-content: space-around;
-}
+@import "show";
