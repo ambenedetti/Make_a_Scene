@@ -1,0 +1,51 @@
+
+.product-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-card h1, p, h3 {
+  color: gray;
+}
+
+.product-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.description {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.description-card a {
+  text-decoration: none;
+  font-weight: bold;
+  color: gray;
+}
+
+.description-card a:hover {
+  font-weight: bold;
+  color: pink;
+}
+
+.pink-button {
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.pink-button:hover {
+background-color: pink;
+}
+
+.booking {
+margin-right: 20px;
+}
+
+.calendar {
+  margin-top: 50px;
+}

@@ -1,16 +1,5 @@
-<!-- index.html.erb -->
-
 <div class="container">
-  <div class="container cards">
-  <p><%= @query %></p>
-    <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-md-3 col-sm-6">
-          <div class="product-card">
-            <p><%= product.title %></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
+  <div class="cards-container">
+    <%= render 'components/card' %>
   </div>
 </div>
