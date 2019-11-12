@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :products do
     resources :images, only: [:index, :create]
-    resources :bookings, except: [:destroy]
+    resources :bookings, only: [:new,:create]
   end
   resources :images, only: [:destroy]
   get 'dashboard', to: 'pages#dashboard'
