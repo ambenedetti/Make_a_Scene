@@ -14,9 +14,8 @@
 
 
     <%= render "components/navbar" unless current_page?(root_path)%>
+    <%= render "components/flashes" %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render "components/footer" unless current_page?(root_path)%>
     <%= javascript_include_tag 'application' %>
