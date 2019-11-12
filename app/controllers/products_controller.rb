@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     authorize @product
     @product.user = current_user
     if @product.save
-      redirect_to product_path(@product)
+      redirect_to new_product_image_path(@product)
     else
       render :new
     end
