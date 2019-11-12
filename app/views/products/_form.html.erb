@@ -1,0 +1,22 @@
+<!-- products/_form.html.erb -->
+
+<div class="form">
+  <%= simple_form_for @product do |f| %>
+  <% if @product.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @product.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.input :title,input_html: {class: 'input-stuff' }  %>
+    <%= f.input :daily_cost,input_html: {class: 'input-stuff' } %>
+    <%= f.input :description,input_html: {class: 'input-stuff' } %>
+    <%= f.input :location,input_html: {class: 'input-stuff' } %>
+    <%= f.input :style,input_html: {class: 'input-stuff' } %>
+    <%= f.input :category, input_html: {class: 'input-stuff' } %>
+    <%= f.submit :submit, class: 'submit-button'  %>
+  <% end %>
+</div>
