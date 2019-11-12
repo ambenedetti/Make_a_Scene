@@ -1,19 +1,34 @@
 class ImagesController < ApplicationController
 
   def new
+    @product = Product.find(params[:product_id])
+    @image = Image.new
+    authorize @image
   end
 
   def create
-  end
-
-  def index
+    @image = Image.new(image_params)
+    @product = Product.find(params[:product_id])
+    @image.product = @product
+    authorize @image
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
   end
 
   def destroy
+    @image = Image.find(params[:id])
+    @product = @image.product
+    authorize @product
+    @image.destroy
+    redirect_to product_path(@product)
   end
 
   private
 
   def image_params
+    params.require(:image).permit(:data)
   end
 end

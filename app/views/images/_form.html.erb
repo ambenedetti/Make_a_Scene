@@ -1,0 +1,16 @@
+<!-- _form.html.erb -->
+<div class="form">
+  <%= simple_form_for [@product, @image] do |f| %>
+  <% if @image.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @image.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.input :data,input_html: {class: 'input-stuff' }  %>
+    <%= f.button :submit, class: 'submit-button'  %>
+  <% end %>
+</div>
