@@ -1,12 +1,21 @@
-.navbar-lewagon {
+.navbar{
+  background-color: black;
+}
+
+ .navbar-logo{
   justify-content: space-between;
-  background: white;
+  font-family: $title-font;
+  color: white;
+  font-size: 24px;
+
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.pink-button {
+  color: $pink;
+  border: 1px solid $pink;
+  border-radius: 10px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.pink-button:hover {
+background-color: $pink;
 }
