@@ -1,4 +1,5 @@
-<% @user.products.each do |product| %>
+<!-- dashboard-product-card -->
+<% @myproducts.each do |product| %>
 <div class="card m-3">
   <img src="<%= product.images[0].data %>" class="card-img-top">
   <div class="card-body p-2">
@@ -16,5 +17,8 @@
       </div>
     </div>
   </div>
+</div>
+<div class="dashboard-orders">
+  <%= render 'components/dashboard-product-card' %>
 </div>
 <% end %>
