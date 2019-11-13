@@ -1,13 +1,33 @@
 // _dashboard-product-card.scss
-.product-information-dashboard {
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
+.information-cards-bookings {
+  width: 900px;
 }
+
+.dash-myproduct{
+  margin-left: 160px;
+  padding-top: 20px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.dashboard-orders {
+  width: 500px;
+  margin-left: 20px;
+
+}
+
 .product-actions {
   width: 80px;
   display: flex;
   justify-content: space-around;
+}
+.product-little-card {
+  width: 200px;
 }
 
 .product-actions a {
