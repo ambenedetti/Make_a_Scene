@@ -7,4 +7,5 @@ class PagesController < ApplicationController
     @user = current_user
     @myproducts = Product.where(user: @user)
   end
+
 end
