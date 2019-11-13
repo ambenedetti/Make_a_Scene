@@ -1,4 +1,4 @@
-<% @products.each do |product| %>
+<% @user.products.each do |product| %>
 <div class="card m-3">
   <img src="<%= product.images[0].data %>" class="card-img-top">
   <div class="card-body p-2">
@@ -18,5 +18,3 @@
   </div>
 </div>
 <% end %>
-
-
