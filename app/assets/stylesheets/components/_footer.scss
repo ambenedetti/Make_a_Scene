@@ -1,11 +1,22 @@
 
+// #main-container {
+//   position: relative;
+//   min-height: 100vh;
+// }
+
 .social-footer {
   text-decoration: none;
   padding: 1rem;
   background: black;
-  display: -webkit-flex;
+ display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  // position: absolute;
+  // bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .social-footer .social-footer-icons li:last-of-type {
