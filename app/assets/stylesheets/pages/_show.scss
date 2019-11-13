@@ -1,34 +1,38 @@
 
-.product-image {
+.product-image-show {
   height: 400px;
   background-size: cover;
   background-position: center;
 }
 
-.product-card h1, p, h3 {
+.product-show-card h1, p, h3 {
   color: gray;
 }
 
-.product-card {
+.product-show-card {
   margin: 20px;
   padding: 20px;
 }
 
-.description {
+.product-show-description-location-card {
+  width: 100%;
+}
+
+.product-show-description {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.description-card a {
+.product-show-description-location-card a {
   text-decoration: none;
   font-weight: bold;
   color: gray;
-}
-
-.description-card a:hover {
+  &:hover {
   font-weight: bold;
   color: pink;
 }
+}
+
 
 .pink-button {
   color: gray;
@@ -42,10 +46,10 @@
 background-color: pink;
 }
 
-.booking {
+.product-show-booking {
 margin-right: 20px;
 }
 
-.calendar {
+.product-show-calendar {
   margin-top: 50px;
 }
