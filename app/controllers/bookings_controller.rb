@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
   def index
+    @user = current_user
+    @bookings = policy_scope(Booking)
+    @bookings = Booking.where(user: @user)
   end
 
   def show
@@ -21,6 +24,7 @@ class BookingsController < ApplicationController
     status
 
   end
+
 
   def edit
   end

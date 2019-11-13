@@ -13,9 +13,18 @@
 @import "pages/index";
 @import "pages/dashboard";
 @import "products/index";
+@import "bookings/index";
+@import "images/new";
 @import "components/dashboard-product-card";
 
 
 body {
   background-color: white;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
 }
