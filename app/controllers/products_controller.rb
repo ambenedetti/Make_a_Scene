@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     authorize @product
+    @booking = Booking.new
   end
 
   def new

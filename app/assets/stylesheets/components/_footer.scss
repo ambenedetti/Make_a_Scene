@@ -1,11 +1,34 @@
-.footer {
 
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: black;
-  text-align: center;
-  color: white;
+.social-footer {
+  text-decoration: none;
+  padding: 1rem;
+  background: black;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
+
+.social-footer .social-footer-icons li:last-of-type {
+  margin-right: 0;
+}
+
+.social-footer .social-footer-icons .fab {
+  font-size: 1.3rem;
+  color: $pink;
+}
+
+.social-footer .social-footer-icons .fab:hover {
+  color: $white;
+  transition: color 0.3s ease-in;
+}
+
+.menu-simple li {
+  display: inline;
+  padding: 80px;
+  list-style-type: none;
+  text-align: right;
+}
+
+
+
 
