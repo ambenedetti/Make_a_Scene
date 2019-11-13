@@ -6,9 +6,20 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new()
+    @product = Product.find(params[:product_id])
   end
 
   def create
+    @user = current_user
+    @booking = Booking.new(booking_params)
+    @product = Product.find(params[:product_id])
+    @booking.product = @product
+    redirect_to dashboard_path(@user)
+
+    total_cost
+    status
+
   end
 
   def edit
@@ -23,6 +34,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :total_cost)
   end
 
   def set_booking
