@@ -1,0 +1,22 @@
+.form {
+  background-color: $background-pink;
+  border-radius: 6px;
+  width: 600px;
+  padding: 20px;
+  margin: 100px auto auto auto;
+}
+
+.input-stuff {
+  background-color: white;
+}
+.submit-button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  margin-top: 5px;
+}
+
+.submit-button:hover {
+  color: $pink;
+  opacity: 0.9;
+}

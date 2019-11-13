@@ -6,13 +6,24 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
+    @product = Product.new
+    authorize @product
   end
 
   def create
+    @product = Product.new(product_params)
     authorize @product
+    @product.user = current_user
+    if @product.save
+      redirect_to new_product_image_path(@product)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -32,6 +43,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
+    params.require(:product).permit(:title, :description, :daily_cost, :location, :category, :style)
   end
 
   def set_products

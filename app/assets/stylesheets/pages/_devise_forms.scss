@@ -1,0 +1,55 @@
+// _device_forms.scss
+.form {
+  background-color: $background-pink;
+  border-radius: 6px;
+  width: 600px;
+  padding: 20px;
+  margin: 20px auto auto auto;
+}
+
+.input-stuff {
+  background-color: white;
+}
+.submit-button {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  margin-top: 5px;
+}
+
+.submit-button:hover {
+  color: $pink;
+  opacity: 0.9;
+}
+.btn {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  color: $pink;
+  opacity: 0.9;
+}
+
+.renders {
+  margin-top: 15px;
+}
+.renders a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: $gray;
+  padding: 5px;
+}
+.renders a:hover {
+  margin-top: 10px;
+  text-decoration: none;
+  color: $gray;
+  background-color: $pink;
+  padding: 5px;
+}
+
+.message {
+
+}

@@ -1,0 +1,55 @@
+
+.product-image-show {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.product-show-card h1, p, h3 {
+  color: gray;
+}
+
+.product-show-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+.product-show-description-location-card {
+  width: 100%;
+}
+
+.product-show-description {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.product-show-description-location-card a {
+  text-decoration: none;
+  font-weight: bold;
+  color: gray;
+  &:hover {
+  font-weight: bold;
+  color: pink;
+}
+}
+
+
+.pink-button {
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.pink-button:hover {
+background-color: pink;
+}
+
+.product-show-booking {
+margin-right: 20px;
+}
+
+.product-show-calendar {
+  margin-top: 50px;
+}
