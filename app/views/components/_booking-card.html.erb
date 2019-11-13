@@ -1,0 +1,14 @@
+<% @mybookings.each do |booking| %>
+    <div class="card-product m-2">
+      <img src="<%= booking.product.images[0].data %>" />
+      <div class="card-product-infos">
+        <h3><%= booking.product.title %></h3>
+        <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
+        <div class="booking-card-info d-flex justify-content-between">
+          <p>Status: Pending</p>
+          <p class="cancel-button">Cancel</p>
+        </div>
+      </div>
+    </div>
+<% end %>
+
