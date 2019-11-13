@@ -23,9 +23,9 @@
     <div class="dashboard-orders">
       <% product.bookings.each do |booking| %>
         <div class="card-product m-2">
-          <img src="<%= booking.product.images[0].data %>" />
           <div class="card-product-infos">
             <h3>Booking N: <%= booking.id %></h3>
+            <p><%= booking.user.first_name %><%= booking.user.last_name %></p>
             <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
             <p class="nav-item dropdown">
               <p class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status: Pending</p>

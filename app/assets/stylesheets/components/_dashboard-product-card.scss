@@ -1,14 +1,17 @@
 // _dashboard-product-card.scss
 .information-cards-bookings {
   width: 900px;
+
 }
 
 .dash-myproduct{
   margin-left: 160px;
-  padding-top: 20px;
+  padding: 20px;
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
+  background-color: white;
+  border-radius: 5px;
 }
 .card {
   width: 300px;

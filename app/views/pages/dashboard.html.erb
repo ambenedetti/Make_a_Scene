@@ -1,10 +1,13 @@
 <!-- dashboard.html.erb -->
 <div class="dashboard">
   <div class="tabies tabs-underlined ">
-    <h3 class="tab-underlined active">My Products</h3>
-    <h3 class="tab-underlined">My Bookings</h3>
+    <%= link_to dashboard_path do%>
+      <h3 class="tab-underlined active">My Products</h3>
+    <% end %>
+    <%= link_to bookings_path do%>
+      <h3 class="tab-underlined">My Bookings</h3>
+    <% end %>
     <h3 class="tab-underlined">My Profile</h3>
   </div>
     <%= render 'components/dashboard-product-card' %>
 </div>
-
