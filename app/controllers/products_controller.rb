@@ -6,9 +6,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
-    authorize @product
-    @booking = Booking.new
+  set_product
+  @booking = Booking.new
   end
 
   def new
@@ -29,13 +28,11 @@ class ProductsController < ApplicationController
 
   def edit
     set_product
-    authorize @product
   end
 
   def update
     set_product
     respond_to do |format|
-      authorize @product
       if @product.update(product_params)
         format.html { redirect_to @product, notice: "#{@product.title} was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
@@ -48,7 +45,6 @@ class ProductsController < ApplicationController
 
   def destroy
     set_product
-    authorize @product
     @product.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_url, notice: "#{@product.title} was successfully destroyed." }
@@ -72,5 +68,6 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+    authorize @product
   end
 end

@@ -42,13 +42,13 @@
                 </p></p>
               </p>
               <% if booking.status == 'pending' %>
-                <i class="fas fa-circle spending"></i>
+                <i class="fas fa-circle yello"></i>
               <% elsif booking.status == 'accepted' %>
-                <i class="fas fa-circle saccepted"></i>
+                <i class="fas fa-circle accepted"></i>
               <% elsif booking.status == 'rejected' %>
-                <i class="fas fa-circle srejected"></i>
+                <i class="fas fa-circle rejected"></i>
               <% else %>
-                <i class="fas fa-circle sarchived"></i>
+                <i class="fas fa-circle archived"></i>
               <% end %>
             </div>
           </div>
