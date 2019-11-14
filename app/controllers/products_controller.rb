@@ -28,14 +28,32 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    set_product
+    authorize @product
   end
 
   def update
-    authorize @product
+    set_product
+    respond_to do |format|
+      authorize @product
+      if @product.update(product_params)
+        format.html { redirect_to @product, notice: "#{@product.title} was successfully updated." }
+        format.json { render :show, status: :ok, location: @product }
+      else
+        format.html { render :edit }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
+    set_product
     authorize @product
+    @product.destroy
+    respond_to do |format|
+      format.html { redirect_to dashboard_url, notice: "#{@product.title} was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   def search
@@ -52,6 +70,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:title, :description, :daily_cost, :location, :category, :style)
   end
 
-  def set_products
+  def set_product
+    @product = Product.find(params[:id])
   end
 end

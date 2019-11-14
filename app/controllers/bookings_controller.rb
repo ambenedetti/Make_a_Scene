@@ -28,14 +28,30 @@ class BookingsController < ApplicationController
     end
   end
 
-
   def edit
   end
 
   def update
   end
 
-  def destroy
+  def destroy; end
+
+  def accepted
+    set_booking
+    @booking.accepted!
+    redirect_to dashboard_path, alert: 'booking accepted'
+  end
+
+  def rejected
+    set_booking
+    @booking.rejected!
+    redirect_to dashboard_path, alert: 'booking rejected'
+  end
+
+  def canceled
+    set_booking
+    @booking.rejected!
+    redirect_to bookings_path, alert: 'booking canceled'
   end
 
   private
@@ -45,5 +61,7 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 end

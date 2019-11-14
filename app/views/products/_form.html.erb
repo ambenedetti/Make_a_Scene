@@ -16,7 +16,7 @@
     <%= f.input :description,input_html: {class: 'input-stuff' } %>
     <%= f.input :location,input_html: {class: 'input-stuff' } %>
     <%= f.input :style,input_html: {class: 'input-stuff' } %>
-    <%= f.input :category, input_html: {class: 'input-stuff' } %>
+    <%= f.input :category, input_html: {class: 'input-stuff' },  collection: %w(costumes vehicles furniture electronics decor books toys kitchenware tools miscellaneous) %>
     <%= f.button :submit, class: 'submit-button'  %>
   <% end %>
 </div>
