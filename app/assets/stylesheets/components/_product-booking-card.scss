@@ -5,6 +5,7 @@
   background: white;
   display: flex;
   align-items: center;
+  border: 1px solid $light-gray;
 }
 
 .card-product img {
@@ -40,3 +41,4 @@
 .cancel-button:hover {
   color: black;
 }
+

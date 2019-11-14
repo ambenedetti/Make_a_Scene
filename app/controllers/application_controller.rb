@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  def after_sign_in_path_for(resource)
+  products_path(resource) # <- Path you want to redirect the user to.
+  end
+
 
   private
 

@@ -5,10 +5,10 @@ body, html {
 /* The hero image */
 .hero-image {
   /* darken background effect to the image This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("vinyl-record-player.jpeg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/594388/vinyl-record-player-retro-594388.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 
   /* Set a specific height */
-  height: 100%;
+  height: 100vh;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;

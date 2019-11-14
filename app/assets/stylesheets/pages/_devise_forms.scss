@@ -53,3 +53,17 @@
 .message {
 
 }
+
+.extra-text-devise {
+  margin-top: 20px;
+}
+
+.extra-text-devise a {
+  text-decoration: none;
+  color: $gray;
+}
+.extra-text-devise a:hover {
+  text-decoration: none;
+  color: $gray;
+  background-color: $pink;
+}
