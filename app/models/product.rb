@@ -8,4 +8,10 @@ class Product < ApplicationRecord
   validates :daily_cost, presence: true
   validates :location, presence: true
   validates :category, presence: true, inclusion: { in: %w(costumes vehicles furniture electronics decor books toys kitchenware tools miscellaneous) }
+  include PgSearch::Model
+  pg_search_scope :search_many,
+    against: [:title, :description, :style, :category],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
   def index
     @products = policy_scope(Product)
-    @products = Product.all
+    search
   end
 
   def show
@@ -39,6 +39,11 @@ class ProductsController < ApplicationController
   end
 
   def search
+    if params[:query].present?
+      @products = Product.search_many(params[:query])
+    else
+      @products = Product.all
+    end
   end
 
   private
