@@ -1,7 +1,6 @@
 const bookingStart = document.querySelector('#booking_start_date');
 const bookingEnd = document.querySelector('#booking_end_date');
 const price = document.querySelector('#product-show-daily-cost').innerText;
-console.log(price);
 const totalPrice = document.querySelector('#product-show-total-cost');
 
 const bookingPrice = () => {
