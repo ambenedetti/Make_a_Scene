@@ -1,4 +1,4 @@
-<% @orderbookings = @bookings.sort_by { |k| k[:status] } %>
+<% @order_bookings = @bookings.sort_by { |k| k[:status] } %>
 <% @order_bookings.each do |booking| %>
     <div class="card-product m-2">
       <% if booking.product.images.present? %>
@@ -10,7 +10,18 @@
         <h3 style= "color: black;"><%= booking.product.title %></h3>
         <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
         <div class="booking-card-info d-flex justify-content-between">
-          <p>Status: <%= booking.status %></p>
+          <div class="status d-flex justify-content-between align-items-center">
+            <p>Status: <%= booking.status %></p>
+            <% if booking.status == 'pending' %>
+              <i class="fas fa-circle pending"></i>
+            <% elsif booking.status == 'accepted' %>
+              <i class="fas fa-circle accepted"></i>
+            <% elsif booking.status == 'rejected' %>
+              <i class="fas fa-circle rejected"></i>
+            <% else %>
+              <i class="fas fa-circle archived"></i>
+            <% end %>
+          </div>
           <%=link_to "Cancel Booking", canceled_path(booking), class: "cancel-button" %>
         </div>
       </div>
