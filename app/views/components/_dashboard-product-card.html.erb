@@ -25,7 +25,8 @@
       </div>
     </div>
     <div class="dashboard-orders">
-      <% product.bookings.each do |booking| %>
+      <% @bookings = product.bookings.sort_by { |k| k[:status] } %>
+      <% @bookings.each do |booking| %>
         <div class="card-product m-2">
           <div class="card-product-infos">
             <h3>Booking N: <%= booking.id %></h3>
@@ -34,9 +35,8 @@
             <p class="nav-item dropdown">
               <p class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status: <%= booking.status %></p>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <%= link_to "Accept", method: :accepted!, class: "dropdown-item accepting" %>
-
-                  <%= link_to "Cancel", method: :rejected!, class: "dropdown-item canceling" %>
+                  <%= link_to "Accept", accepted_path(booking) , class: "dropdown-item accepting" %>
+                  <%= link_to "Cancel", rejected_path(booking), class: "dropdown-item canceling" %>
               </div>
               </p></p>
             </p>

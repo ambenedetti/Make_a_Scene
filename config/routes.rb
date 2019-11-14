@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new,:create]
   end
   resources :bookings, only: [:index]
+  get 'accepted/:id', to: 'bookings#accepted', as: "accepted"
+  get 'rejected/:id', to: 'bookings#rejected', as: "rejected"
+  get 'canceled/:id', to: 'bookings#canceled', as: "canceled"
   resources :images, only: [:destroy]
 end

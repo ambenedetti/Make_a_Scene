@@ -1,4 +1,5 @@
-<% @bookings.each do |booking| %>
+<% @orderbookings = @bookings.sort_by { |k| k[:status] } %>
+<% @order_bookings.each do |booking| %>
     <div class="card-product m-2">
       <% if booking.product.images.present? %>
         <%= image_tag booking.product.images[0].data, class: "card-img-top" %>
@@ -10,7 +11,7 @@
         <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
         <div class="booking-card-info d-flex justify-content-between">
           <p>Status: <%= booking.status %></p>
-          <p class="cancel-button">Cancel</p>
+          <%=link_to "Cancel Booking", canceled_path(booking), class: "cancel-button" %>
         </div>
       </div>
     </div>
