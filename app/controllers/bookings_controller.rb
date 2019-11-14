@@ -14,12 +14,15 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking = Booking.new(booking_params)
     @product = Product.find(params[:product_id])
+    authorize @product
     @booking.product = @product
-    redirect_to dashboard_path(@user)
-
-    total_cost
-    status
-
+    @booking.user = @user
+    @booking.status = 0
+    if @booking.save
+      redirect_to dashboard_path(@user)
+    else
+      render :new
+    end
   end
 
   def edit
