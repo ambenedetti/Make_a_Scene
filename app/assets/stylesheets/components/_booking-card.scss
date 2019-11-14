@@ -1,15 +1,35 @@
 .booking-card-info {
-  width: 900px;
+  width: 870px;
 }
 
 .darker-title {
   color: black;
 }
 .cancel-button {
-
   background-color: black;
   padding: 10px;
   color: white;
 }
-
-
+.status {
+  width: 110px;
+}
+.pendig {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #F5C600
+}
+.accepted {
+  margin-top: 5px;
+  color: #00933E;
+  font-size: 12px;
+}
+.rejected {
+  margin-top: 5px;
+  color: #F71228;
+  font-size: 12px;
+}
+.archived {
+  margin-top: 5px;
+  font-size: 12px;
+  color: $gray;
+}

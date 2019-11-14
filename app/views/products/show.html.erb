@@ -1,10 +1,16 @@
 <div class="wrapper-product-show">
-
   <% if @product.images.present? %>
-    <%= image_tag @product.images[0].data, class: "product-image-show" %>
+    <%= cl_image_tag @product.images[0].data, class: "product-image-show" %>
+
+
   <% else %>
-    <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+    <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "product-image-show"%>
   <% end %>
+  <% if @product.user == current_user %>
+    <div class="image_editing">
+      <%= link_to 'Uppload an Image', new_product_image_path(@product), class: "submit-button" %>
+    </div>
+    <% end %>
   <div class="product-show-card d-flex">
     <div class="product-show-description-location-card p-2 flex-grow-1">
       <h1><%= @product.title %></h1>
@@ -22,4 +28,3 @@
     <%= render "bookings/booking_form", product: @product, booking: @booking %>
   </div>
 </div>
-
