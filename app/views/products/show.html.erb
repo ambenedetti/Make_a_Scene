@@ -1,15 +1,15 @@
 <div class="wrapper-product-show">
 
-  <div class="product-image-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @product.images[0].data %>')">
-  </div>
-
+  <% if @product.images.present? %>
+    <%= image_tag @product.images[0].data, class: "product-image-show" %>
+  <% else %>
+    <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+  <% end %>
   <div class="product-show-card d-flex">
     <div class="product-show-description-location-card p-2 flex-grow-1">
       <h1><%= @product.title %></h1>
       <p>Category: <span style="color: pink;"> <strong><%= @product.category.upcase %></strong></span>  Style: <span style="color: pink;"><strong><%= @product.style.upcase %></strong></span>
-          -      Posted by <%= link_to products_path do %>
-          <%= @product.user.first_name.upcase%> <%= @product.user.last_name.upcase %>
-          <% end %>
+          -      Posted by <span style="color: pink;"><strong><%= @product.user.first_name.upcase %><%= @product.user.last_name.upcase%></strong></span>
         </p>
       <div class="product-show-description">
         <p><%= @product.description %></p>

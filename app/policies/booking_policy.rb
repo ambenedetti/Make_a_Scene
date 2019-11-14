@@ -9,6 +9,18 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def accepted?
+    true
+  end
+
+  def rejected?
+    true
+  end
+
+  def canceled?
+    true
+  end
+
   def show?
     true
   end

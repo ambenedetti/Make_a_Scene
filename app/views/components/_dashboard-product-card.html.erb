@@ -3,7 +3,11 @@
   <% @myproducts.each do |product| %>
   <div class="dash-myproduct">
     <div class="card">
-      <img src="<%= product.images[0].data %>" class="card-img-top">
+      <% if product.images.present? %>
+        <%= image_tag product.images[0].data, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+      <% end %>
       <div class="card-body p-2">
         <h3 class="card-title"><%= link_to product.title, product_path(product) %></h3>
         <p><%= product.description.first(100) %>...</p>
@@ -21,24 +25,18 @@
       </div>
     </div>
     <div class="dashboard-orders">
-      <% product.bookings.each do |booking| %>
+      <% @bookings = product.bookings.sort_by { |k| k[:status] } %>
+      <% @bookings.each do |booking| %>
         <div class="card-product m-2">
           <div class="card-product-infos">
             <h3>Booking N: <%= booking.id %></h3>
             <p><%= booking.user.first_name %><%= booking.user.last_name %></p>
             <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
             <p class="nav-item dropdown">
-              <p class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status:
-                <%if booking.status == 1 %>
-                  <%= 'Pending' %>
-                <% elsif booking.status == 2 %>
-                  <%= 'Accepted' %>
-                <% else %>
-                  <%= 'Declined' %>
-                <% end %>
+              <p class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status: <%= booking.status %></p>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <%= link_to "Accept", "#", class: "dropdown-item accepting" %>
-                  <%= link_to "Cancel", "#", class: "dropdown-item canceling" %>
+                  <%= link_to "Accept", accepted_path(booking) , class: "dropdown-item accepting" %>
+                  <%= link_to "Cancel", rejected_path(booking), class: "dropdown-item canceling" %>
               </div>
               </p></p>
             </p>

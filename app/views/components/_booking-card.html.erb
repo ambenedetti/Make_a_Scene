@@ -1,20 +1,17 @@
-<% @bookings.each do |booking| %>
+<% @orderbookings = @bookings.sort_by { |k| k[:status] } %>
+<% @order_bookings.each do |booking| %>
     <div class="card-product m-2">
-      <img src="<%= booking.product.images[0].data %>" />
+      <% if booking.product.images.present? %>
+        <%= image_tag booking.product.images[0].data, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+      <% end %>
       <div class="card-product-infos">
         <h3 style= "color: black;"><%= booking.product.title %></h3>
         <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
         <div class="booking-card-info d-flex justify-content-between">
-          <p>Status:
-            <%if booking.status == 1 %>
-              <%= 'Pending' %>
-            <% elsif booking.status == 2 %>
-              <%= 'Accepted' %>
-            <% else %>
-              <%= 'Declined' %>
-            <% end %>
-          </p>
-          <p class="cancel-button">Cancel</p>
+          <p>Status: <%= booking.status %></p>
+          <%=link_to "Cancel Booking", canceled_path(booking), class: "cancel-button" %>
         </div>
       </div>
     </div>
