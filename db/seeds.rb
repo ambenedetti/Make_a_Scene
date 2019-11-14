@@ -90,7 +90,7 @@ puts 'Creating 10 fake bookings for Lily...'
 10.times do
   booking = Booking.create!(
     user: user4,
-    product: Product.find(rand(1..29)),
+    product: Product.all.sample,
     start_date: rand(1.day.ago..5.weeks.from_now).to_date,
     end_date: rand(1.day.ago..5.weeks.from_now).to_date,
     total_cost: [450, 100, 75, 560, 780, 350, 250, 85].sample,
@@ -107,7 +107,7 @@ user5 = User.create(email: "robin@scherbatsky.org", password: "password", first_
 15.times do
   booking = Booking.create!(
     user: user5,
-    product: Product.find(rand(1..39)),
+    product: Product.all.sample,
     start_date: rand(1.day.ago..5.weeks.from_now).to_date,
     end_date: rand(1.day.ago..5.weeks.from_now).to_date,
     total_cost: [450, 100, 75, 560, 780, 350, 250, 85].sample,
@@ -122,7 +122,7 @@ puts 'Creating 10 fake bookings for Ted...'
 10.times do
   booking = Booking.create!(
     user: user2,
-    product: Product.find(rand(21..39)),
+    product: Product.all.sample,
     start_date: rand(1.day.ago..5.weeks.from_now).to_date,
     end_date: rand(1.day.ago..5.weeks.from_now).to_date,
     total_cost: [450, 100, 75, 560, 780, 350, 250, 85].sample,
@@ -137,7 +137,7 @@ puts 'Creating 10 fake bookings for Barney...'
 10.times do
   booking = Booking.create!(
     user: user1,
-    product: Product.find(rand(11..39)),
+    product: Product.all.sample,
     start_date: rand(1.day.ago..5.weeks.from_now).to_date,
     end_date: rand(1.day.ago..5.weeks.from_now).to_date,
     total_cost: [450, 100, 75, 560, 780, 350, 250, 85].sample,
