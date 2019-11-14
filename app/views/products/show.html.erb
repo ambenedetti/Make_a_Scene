@@ -1,6 +1,8 @@
 <div class="wrapper-product-show">
   <% if @product.images.present? %>
-    <%= image_tag @product.images[0].data, class: "product-image-show" %>
+    <%= cl_image_tag @product.images[0].data, class: "product-image-show" %>
+
+
   <% else %>
     <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "product-image-show"%>
   <% end %>
@@ -26,4 +28,3 @@
     <%= render "bookings/booking_form", product: @product, booking: @booking %>
   </div>
 </div>
-
