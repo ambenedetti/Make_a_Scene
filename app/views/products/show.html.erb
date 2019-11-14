@@ -1,9 +1,12 @@
 <div class="wrapper-product-show">
 
   <% if @product.images.present? %>
-    <%= image_tag @product.images[0].data, class: "product-image-show" %>
+    <%= cl_image_tag @product.images[0].data, class: "product-image-show" %>
+
+
   <% else %>
-    <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+    <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "product-image-show"%>
+
   <% end %>
   <div class="product-show-card d-flex">
     <div class="product-show-description-location-card p-2 flex-grow-1">
@@ -23,3 +26,29 @@
   </div>
 </div>
 
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= cl_image_tag @product.images[0].data, class: "product-image-show d-block w-100" %>
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1573119574031-80390c957549?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=982&q=80" class="d-block w-100 product-image-show" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1573010304225-4a14ceacd813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80" class="d-block w-100 product-image-show" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

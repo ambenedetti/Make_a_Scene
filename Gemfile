@@ -12,6 +12,8 @@ gem 'pundit'
 
 gem 'pg_search', '~> 2.3.0'
 gem 'faker'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
