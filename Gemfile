@@ -10,6 +10,7 @@ gem 'redis'
 gem 'devise'
 gem 'pundit'
 
+gem 'pg_search', '~> 2.3.0'
 gem 'faker'
 
 gem 'autoprefixer-rails'

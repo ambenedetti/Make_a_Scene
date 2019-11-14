@@ -1,6 +1,10 @@
 <% @products.each do |product| %>
 <div class="card m-3">
-  <img src="<%= product.images[0].data %>" class="card-img-top">
+  <% if product.images.present? %>
+    <%= image_tag product.images[0].data, class: "card-img-top" %>
+  <% else %>
+    <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+  <% end %>
   <div class="card-body p-2">
     <h3 class="card-title"><%= link_to product.title, product_path(product) %></h3>
     <p><%= product.description.first(100) %>...</p>
