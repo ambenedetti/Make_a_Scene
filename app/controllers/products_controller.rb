@@ -28,10 +28,22 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    set_product
+    authorize @product
   end
 
   def update
-    authorize @product
+    set_product
+    respond_to do |format|
+      authorize @product
+      if @product.update(product_params)
+        format.html { redirect_to @product, notice: "#{@product.title} was successfully updated." }
+        format.json { render :show, status: :ok, location: @product }
+      else
+        format.html { render :edit }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy

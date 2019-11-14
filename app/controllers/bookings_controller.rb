@@ -34,7 +34,16 @@ class BookingsController < ApplicationController
   def update
   end
 
-  def destroy
+  def destroy; end
+
+  def accepted!
+    set_booking
+    raise
+    booking.status = accepted
+  end
+
+    def rejected!
+    booking.status = rejected
   end
 
   private
@@ -44,5 +53,6 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
