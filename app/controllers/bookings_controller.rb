@@ -5,8 +5,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: @user)
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @booking = Booking.new()
