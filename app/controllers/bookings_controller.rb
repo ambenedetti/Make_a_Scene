@@ -28,9 +28,20 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    set_booking
   end
-
   def update
+    set_booking
+    @product = @booking.product
+    respond_to do |format|
+      if @booking.update(booking_params)
+        format.html { redirect_to bookings_path, notice: "The booking for #{@product.title} was successfully updated." }
+        format.json { render :show, status: :ok, location: @bookings }
+      else
+        format.html { render :edit }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy; end

@@ -7,8 +7,13 @@
     <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "product-image-show"%>
   <% end %>
   <% if @product.user == current_user %>
-    <div class="image_editing">
-      <%= link_to 'Uppload an Image', new_product_image_path(@product), class: "submit-button" %>
+    <div class="user_product_options d-flex">
+      <div class="image_editing">
+        <%= link_to 'Uppload an Image', new_product_image_path(@product), class: "submit-button" %>
+      </div>
+      <div class="image_editing">
+        <%= link_to 'Delete an Image', product_images_path(@product), class: "submit-button" %>
+      </div>
     </div>
     <% end %>
   <div class="product-show-card d-flex">

@@ -41,4 +41,24 @@
 .cancel-button:hover {
   color: black;
 }
+.yello {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #F5C600
+}
+.accepted {
+  margin-top: 10px;
+  color: #00933E;
+  font-size: 12px;
+}
+.rejected {
+  margin-top: 10px;
+  color: #F71228;
+  font-size: 12px;
+}
+.archived {
+  margin-top: 10px;
+  font-size: 12px;
+  color: $gray;
+}
 

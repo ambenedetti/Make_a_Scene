@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <nav class="navbar">
-        <%= link_to root_path do %>
+        <%= link_to products_path do %>
         <span class="navbar-logo">Make A Scene</span>
         <% end %>
 
@@ -26,7 +26,7 @@
       </nav>
 <% else %>
     <nav class="navbar">
-      <%= link_to root_path do %>
+      <%= link_to products_path do %>
       <span class="navbar-logo">Make A Scene</span>
       <% end %>
       <div class="form-inline">

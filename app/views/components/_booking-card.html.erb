@@ -13,15 +13,16 @@
           <div class="status d-flex justify-content-between align-items-center">
             <p>Status: <%= booking.status %></p>
             <% if booking.status == 'pending' %>
-              <i class="fas fa-circle pending"></i>
+              <i class="fas fa-circle yello"></i>
             <% elsif booking.status == 'accepted' %>
-              <i class="fas fa-circle accepted"></i>
+              <i class="fas fa-circle saccepted"></i>
             <% elsif booking.status == 'rejected' %>
-              <i class="fas fa-circle rejected"></i>
+              <i class="fas fa-circle srejected"></i>
             <% else %>
-              <i class="fas fa-circle archived"></i>
+              <i class="fas fa-circle sarchived"></i>
             <% end %>
           </div>
+          <%=link_to "Edit Booking", edit_booking_path(booking), class: "cancel-button" %>
           <%=link_to "Cancel Booking", canceled_path(booking), class: "cancel-button" %>
         </div>
       </div>

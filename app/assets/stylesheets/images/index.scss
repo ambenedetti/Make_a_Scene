@@ -1,0 +1,15 @@
+// index.scss
+.img-trash {
+  position: absolute;
+  bottom: 50px;
+  left: 70px;
+  color: $gray;
+  background-color: $background_pink;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.img-trash:hover {
+  background-color: $pink;
+  color: black;
+}
