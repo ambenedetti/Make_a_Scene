@@ -19,18 +19,7 @@
         <h3>Location</h3>
       </div>
     </div>
-    <div class="product-show-booking p-2">
-      <div class="booking-form-show-page" style="width: 300px; margin: 0 auto;">
-        <h3>Book this <%= @product.title %></h3>
-
-        <%= simple_form_for [@product, @booking] do |f| %>
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :total_cost, input_html: {id: "product-show-total-cost"} %>
-          <%= f.button :submit, "Book now", class: "btn pink-button m-2 pr-2 pl-2" %>
-        <% end %>
-      </div>
-    </div>
+    <%= render "bookings/booking_form", product: @product, booking: @booking %>
   </div>
 </div>
 
