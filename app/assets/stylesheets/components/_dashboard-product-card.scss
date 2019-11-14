@@ -42,3 +42,26 @@
   color: $gray;
   text-decoration: none;
 }
+.statusbooked {
+  width: 160px;
+}
+.pendig {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #F5C600
+}
+.saccepted {
+  margin-top: 10px;
+  color: #00933E;
+  font-size: 12px;
+}
+.srejected {
+  margin-top: 10px;
+  color: #F71228;
+  font-size: 12px;
+}
+.sarchived {
+  margin-top: 10px;
+  font-size: 12px;
+  color: $gray;
+}
