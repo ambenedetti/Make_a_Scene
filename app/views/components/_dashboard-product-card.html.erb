@@ -4,7 +4,7 @@
   <div class="dash-myproduct">
     <div class="card">
       <% if product.images.present? %>
-        <%= image_tag product.images[0].data, class: "card-img-top" %>
+        <%= cl_image_tag product.images[0].data, class: "card-img-top" %>
       <% else %>
         <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
       <% end %>
