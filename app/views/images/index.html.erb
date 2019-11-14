@@ -1,10 +1,15 @@
 <!-- index.html.erb -->
+<div class="dashboard">
 <div class="row">
 <%@product.images.each do |image|%>
-  <div class="col-md-3 col-sm-6">
-    <%= image_tag image.data, style: "width: 300px; margin: 30px;"%>
+  <div class="col-md-4 col-sm-8">
+    <%= image_tag image.data, style: "width: 300px; margin: 30px; position: relative;"%>
+    <%= link_to image_path(image), method: :delete, data: { confirm: "Are you sure?" } do%>
+      <i class="fas fa-trash img-trash"></i>
+    <% end %>
   </div>
 <% end %>
 </div>
 
 <%= link_to 'Back to Product', product_path(@product), class: "submit-button", style: "margin: 20px;" %>
+</div>
