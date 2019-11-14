@@ -1,0 +1,10 @@
+<!-- index.html.erb -->
+<div class="row">
+<%@product.images.each do |image|%>
+  <div class="col-md-3 col-sm-6">
+    <%= image_tag image.data, style: "width: 300px; margin: 30px;"%>
+  </div>
+<% end %>
+</div>
+
+<%= link_to 'Back to Product', product_path(@product), class: "submit-button", style: "margin: 20px;" %>
