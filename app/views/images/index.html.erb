@@ -3,10 +3,12 @@
 <div class="row">
 <%@product.images.each do |image|%>
   <div class="col-md-4 col-sm-8">
-    <%= image_tag image.data, style: "width: 300px; margin: 30px; position: relative;"%>
+    <div style=" position: relative;">
+      <%= cl_image_tag image.data, style: "width: 300px; margin: 30px;"%>
     <%= link_to image_path(image), method: :delete, data: { confirm: "Are you sure?" } do%>
       <i class="fas fa-trash img-trash"></i>
     <% end %>
+    </div>
   </div>
 <% end %>
 </div>

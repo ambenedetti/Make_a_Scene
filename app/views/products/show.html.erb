@@ -15,7 +15,7 @@
         <%= link_to 'Delete an Image', product_images_path(@product), class: "submit-button" %>
       </div>
     </div>
-    <% end %>
+  <% end %>
   <div class="product-show-card d-flex">
     <div class="product-show-description-location-card p-2 flex-grow-1">
       <h1><%= @product.title %></h1>
@@ -30,6 +30,8 @@
         <h3>Location</h3>
       </div>
     </div>
-    <%= render "bookings/booking_form", product: @product, booking: @booking %>
+    <% if @product.user != current_user %>
+      <%= render "bookings/booking_form", product: @product, booking: @booking %>
+    <% end %>
   </div>
 </div>

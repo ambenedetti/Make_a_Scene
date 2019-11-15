@@ -21,7 +21,10 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.status = 0
     if @booking.save
-      redirect_to dashboard_path(@user)
+      respond_to do |format|
+      format.html { redirect_to dashboard_path(@user), notice: "Yay! You successfully booked #{@product.title}." }
+      format.json { head :no_content }
+    end
     else
       render "products/show", product: @product, booking: @booking
     end

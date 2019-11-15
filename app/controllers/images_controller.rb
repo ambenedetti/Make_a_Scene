@@ -28,7 +28,10 @@ class ImagesController < ApplicationController
     @product = @image.product
     authorize @product
     @image.destroy
-    redirect_to product_path(@product)
+    respond_to do |format|
+      format.html { redirect_to product_path(@product), notice: "Your image was successfully deleted." }
+      format.json { head :no_content }
+    end
   end
 
   private
