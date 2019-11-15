@@ -10,7 +10,7 @@
         <%=link_to product_path(booking.product) do  %>
           <h3 style= "color: black;" class="booking-card-title-name"><%= booking.product.title %></h3>
         <% end %>
-        <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
+        <p><%= booking.id %>| <%= booking.start_date.strftime("%b/%d/%Y") %> to <%= booking.end_date.strftime("%b/%d/%Y") %> | <%= booking.total_cost %></p>
         <div class="booking-card-info d-flex justify-content-between">
           <div class="status d-flex justify-content-between align-items-center">
             <p>Status: <%= booking.status %></p>

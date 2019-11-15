@@ -1,4 +1,5 @@
 <div class="form">
+  <p>Your current booking dates are: <%= @booking.start_date.strftime("%b/%d/%Y") %> to <%= @booking.end_date.strftime("%b/%d/%Y")%></p>
   <%= simple_form_for @booking do |f| %>
   <% if @booking.errors.any? %>
       <div class="errors-container">
@@ -9,8 +10,8 @@
         </ul>
       </div>
     <% end %>
-    <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-    <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.input :start_date, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, input_html: {class: "datepicker"} %>
     <div style="display: flex; justify-content: space-between; align-items: center;">
       <%= f.button :submit, class: 'submit-button'  %>
     <% end %>

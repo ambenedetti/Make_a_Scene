@@ -31,7 +31,7 @@
           <div class="card-product-infos">
             <h3>Booking N: <%= booking.id %></h3>
             <p><%= booking.user.first_name %><%= booking.user.last_name %></p>
-            <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
+            <p><%= booking.id %>| <%= booking.start_date.strftime("%b/%d/%Y") %> to <%= booking.end_date.strftime("%b/%d/%Y") %> | <%= booking.total_cost %></p>
             <div class="statusbooked d-flex justify-content-between">
               <p class="nav-item dropdown">
                 <p class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Status: <%= booking.status %></p>
