@@ -11,6 +11,9 @@
       </div>
     <% end %>
     <%= f.input :data,input_html: {class: 'input-stuff'}, label: 'Image'  %>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
     <%= f.button :submit, class: 'submit-button'  %>
   <% end %>
+  <%= link_to 'Add images later', product_path(@product), class: "submit-button", style: "margin: 20px;" %>
+  </div>
 </div>

@@ -49,19 +49,19 @@ class BookingsController < ApplicationController
   def accepted
     set_booking
     @booking.accepted!
-    redirect_to dashboard_path, alert: 'booking accepted'
+    redirect_to dashboard_path, notice: 'booking accepted'
   end
 
   def rejected
     set_booking
     @booking.rejected!
-    redirect_to dashboard_path, alert: 'booking rejected'
+    redirect_to dashboard_path, notice: 'booking rejected'
   end
 
   def canceled
     set_booking
     @booking.rejected!
-    redirect_to bookings_path, alert: 'booking canceled'
+    redirect_to bookings_path, notice: 'booking canceled'
   end
 
   private
