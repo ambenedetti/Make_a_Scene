@@ -55,7 +55,7 @@
         <p><strong>Price per day: <span style="color: gray;"id="product-show-daily-cost" ><%= @product.daily_cost %></span>€</strong></p>
       </div>
       <div class="product-show-location">
-        <h3>Location</h3>
+        <p>Location: <em><%= @product.location %> </em></p>
       </div>
     </div>
     <% if @product.user != current_user %>

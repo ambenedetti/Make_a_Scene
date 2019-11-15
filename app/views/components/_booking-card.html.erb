@@ -7,7 +7,9 @@
         <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
       <% end %>
       <div class="card-product-infos">
-        <h3 style= "color: black;"><%= booking.product.title %></h3>
+        <%=link_to product_path(booking.product) do  %>
+          <h3 style= "color: black;" class="booking-card-title-name"><%= booking.product.title %></h3>
+        <% end %>
         <p><%= booking.id %>| <%= booking.start_date %><%= booking.end_date %> | <%= booking.total_cost %></p>
         <div class="booking-card-info d-flex justify-content-between">
           <div class="status d-flex justify-content-between align-items-center">
@@ -22,8 +24,8 @@
               <i class="fas fa-circle sarchived"></i>
             <% end %>
           </div>
-          <%=link_to "Edit Booking", edit_booking_path(booking), class: "cancel-button" %>
-          <%=link_to "Cancel Booking", canceled_path(booking), class: "cancel-button" %>
+          <%=link_to "Edit Booking", edit_booking_path(booking), class: "booking-cancel-button" %>
+          <%=link_to "Cancel Booking", canceled_path(booking), class: "booking-cancel-button" %>
         </div>
       </div>
     </div>

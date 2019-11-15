@@ -7,6 +7,7 @@
   <% end %>
   <div class="card-body p-2">
     <h3 class="card-title"><%= link_to product.title, product_path(product) %></h3>
+    <p>Category: <span style="color: pink; font-weight: bold;"><%= product.category %></span></p>
     <p><%= product.description.first(100) %>...</p>
     <p>€<%= product.daily_cost %></p>
   </div>
