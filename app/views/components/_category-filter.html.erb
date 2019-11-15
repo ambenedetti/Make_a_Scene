@@ -1,0 +1,8 @@
+<div class="category-filter-container">
+  <div class="category-filters d-flex justify-content-around">
+    <% categories = ["costumes", "vehicles", "furniture", "electronics", "decor", "books", "toys", "kitchenware", "tools", "miscellaneous"] %>
+    <% categories.each do |category| %>
+     <%= button_to category, products_path, method: :get, params: { category: category}, class: "white-button m-2 pr-2 pl-2" %>
+    <% end %>
+  </div>
+</div>

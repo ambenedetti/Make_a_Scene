@@ -9,6 +9,7 @@ import { endDate } from 'components/confirmation_modal';
 import { startDate } from 'components/confirmation_modal';
 import { totalPrice } from 'components/confirmation_modal';
 
+
 flatpickr(".datepicker", {
   disableMobile: true,
   altInput: true,
@@ -22,3 +23,4 @@ showModal();
 endDate();
 startDate();
 totalPrice();
+

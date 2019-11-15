@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
   def index
-    @products = policy_scope(Product)
     search
   end
 
@@ -61,9 +60,17 @@ class ProductsController < ApplicationController
 
   def search
     if params[:query].present?
-      @products = Product.search_many(params[:query])
+      session[:query] = params[:query]
+      @products = policy_scope(Product).search_many(params[:query])
+    elsif params[:category].present?
+      if session[:query] == nil
+        @products = policy_scope(Product).where(category: params[:category])
+      else
+        @products = policy_scope(Product).search_many(session[:query]).where(category: params[:category])
+      end
     else
-      @products = Product.all
+      session[:query] = nil
+      @products = policy_scope(Product)
     end
   end
 
