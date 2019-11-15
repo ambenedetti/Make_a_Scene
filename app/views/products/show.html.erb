@@ -35,7 +35,7 @@
   <% if @product.user == current_user %>
     <div class="user_product_options d-flex">
       <div class="image_editing">
-        <%= link_to 'Uppload an Image', new_product_image_path(@product), class: "submit-button" %>
+        <%= link_to 'Upload an Image', new_product_image_path(@product), class: "submit-button" %>
       </div>
       <div class="image_editing">
         <%= link_to 'Delete an Image', product_images_path(@product), class: "submit-button" %>
