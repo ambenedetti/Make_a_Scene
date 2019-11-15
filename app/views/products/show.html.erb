@@ -20,7 +20,9 @@
     <div class="product-show-description-location-card p-2 flex-grow-1">
       <h1><%= @product.title %></h1>
       <p>Category: <span style="color: pink;"> <strong><%= @product.category.upcase %></strong></span>  Style: <span style="color: pink;"><strong><%= @product.style.upcase %></strong></span>
-          -      Posted by <span style="color: pink;"><strong><%= @product.user.first_name.upcase %><%= @product.user.last_name.upcase%></strong></span>
+          -      Posted by <%= link_to userproducts_path(@product), style: "color: pink;", class: "cosita" do %>
+          <%= @product.user.first_name.upcase%> <%= @product.user.last_name.upcase  %>
+          <% end %>
         </p>
       <div class="product-show-description">
         <p><%= @product.description %></p>

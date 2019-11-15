@@ -13,6 +13,10 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
+  def userproducts?
+    true
+  end
+
   def update?
     record.user == user
   end

@@ -53,6 +53,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def userproducts
+    set_product
+    @user = @product.user
+    @userproducts = @user.products
+  end
+
   def search
     if params[:query].present?
       @products = Product.search_many(params[:query])
