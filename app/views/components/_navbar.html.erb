@@ -14,6 +14,7 @@
           <%= submit_tag "Search", class: "btn pink-button my-2 my-sm-0 mr-5"%>
           <% end %>
 
+        <%= render "components/booking_notification" %>
           <span class="nav-item dropdown">Hello
           <span class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name%></span>
           <div class="dropdown-menu dropdown-menu-right" style="text-align: right;" aria-labelledby="navbarDropdown">
