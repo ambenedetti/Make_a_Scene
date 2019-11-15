@@ -1,12 +1,11 @@
 <%= render 'components/category-filter' %>
-<div class="container"style="min-height: 100%;">
   <% if @products.present? %>
+<div class="container"style="min-height: 100%;">
     <div class="cards-container">
     <%= render 'components/card' %>
    </div>
+     </div>
   <% else %>
-    <h1>no results dummie</h1>
+    <%= render 'components/zero-result-page' %>
   <% end %>
-  </div>
-
 
