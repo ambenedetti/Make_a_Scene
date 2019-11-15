@@ -48,7 +48,14 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to dashboard_url, notice: "#{@product.title} was successfully destroyed." }
       format.json { head :no_content }
+
     end
+  end
+
+  def userproducts
+    set_product
+    @user = @product.user
+    @userproducts = @user.products
   end
 
   def search

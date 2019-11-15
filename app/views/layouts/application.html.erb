@@ -16,11 +16,11 @@
   <body>
 
     <%= render "components/navbar"%>
-    <%= render "components/flashes" %>
 
+<div>
     <%= yield %>
-
-
+    <%= render "components/flashes" %>
+</div>
     <%= render "components/footer"%>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
