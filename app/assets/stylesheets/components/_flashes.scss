@@ -1,0 +1,22 @@
+// _flashes.scss
+
+.notice {
+  width: 200px;
+  position: fixed;
+  text-align: center;
+  top: 100px;
+  right: 25px;
+  border: 2px solid #1EDD88;
+  background-color: white;
+  padding-top: 10px;
+}
+.alert {
+  text-align: center;
+  right: 25px;
+  position: fixed;
+  top: 100px;
+  border: 2px solid #FD1015;
+  background-color: white;
+  padding-top: 10px;
+}
+
