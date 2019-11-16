@@ -55,7 +55,14 @@ class ProductsController < ApplicationController
   def userproducts
     set_product
     @user = @product.user
-    @userproducts = @user.products
+    @products = Product.all
+    @userproducts = []
+    @products.each do |product|
+      if product.user_id == @user.id
+        @userproducts << product
+      end
+    end
+    @userproducts
   end
 
   def search
