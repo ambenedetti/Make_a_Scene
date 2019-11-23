@@ -21,7 +21,10 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.status = 0
     if @booking.save
-      redirect_to dashboard_path(@user)
+      respond_to do |format|
+      format.html { redirect_to dashboard_path(@user), notice: "Yay! You successfully booked #{@product.title}." }
+      format.json { head :no_content }
+    end
     else
       render "products/show", product: @product, booking: @booking
     end
@@ -49,19 +52,19 @@ class BookingsController < ApplicationController
   def accepted
     set_booking
     @booking.accepted!
-    redirect_to dashboard_path, alert: 'booking accepted'
+    redirect_to dashboard_path, notice: 'booking accepted'
   end
 
   def rejected
     set_booking
     @booking.rejected!
-    redirect_to dashboard_path, alert: 'booking rejected'
+    redirect_to dashboard_path, notice: 'booking rejected'
   end
 
   def canceled
     set_booking
     @booking.rejected!
-    redirect_to bookings_path, alert: 'booking canceled'
+    redirect_to bookings_path, notice: 'booking canceled'
   end
 
   private

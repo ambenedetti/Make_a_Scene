@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"> -->
 
-    <title> 🎬 Make A Scene</title>
+    <title>🎬 Make A Scene</title>
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -15,12 +16,10 @@
   <body>
 
     <%= render "components/navbar"%>
-    <%= render "components/flashes" %>
-
-
+<div>
     <%= yield %>
-
-
+    <%= render "components/flashes" %>
+</div>
     <%= render "components/footer"%>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

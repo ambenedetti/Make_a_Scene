@@ -1,0 +1,15 @@
+.category-filter-container {
+  background-color: black;
+  margin: 0;
+}
+
+.white-button {
+  background-color: white;
+  color: gray;
+  width: 115px;
+  font-size: 14px;
+}
+
+.white-button:hover {
+  background-color: $pink;
+}

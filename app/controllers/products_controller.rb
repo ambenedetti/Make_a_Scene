@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
   def index
-    @products = policy_scope(Product)
     search
   end
 
@@ -49,14 +48,36 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to dashboard_url, notice: "#{@product.title} was successfully destroyed." }
       format.json { head :no_content }
+
     end
+  end
+
+  def userproducts
+    set_product
+    @user = @product.user
+    @products = Product.all
+    @userproducts = []
+    @products.each do |product|
+      if product.user_id == @user.id
+        @userproducts << product
+      end
+    end
+    @userproducts
   end
 
   def search
     if params[:query].present?
-      @products = Product.search_many(params[:query])
+      session[:query] = params[:query]
+      @products = policy_scope(Product).search_many(params[:query])
+    elsif params[:category].present?
+      if session[:query] == nil
+        @products = policy_scope(Product).where(category: params[:category])
+      else
+        @products = policy_scope(Product).search_many(session[:query]).where(category: params[:category])
+      end
     else
-      @products = Product.all
+      session[:query] = nil
+      @products = policy_scope(Product)
     end
   end
 

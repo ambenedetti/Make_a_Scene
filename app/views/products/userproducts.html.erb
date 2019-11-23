@@ -1,0 +1,20 @@
+<!-- myproducts.html.erb -->
+<div class="container">
+  <h3 style="margin-top: 50px; margin-bottom: 20px; text-align: center;">Check all the products posted by <span style="color: black; background-color: #F9F4F4; padding: 5px;"><%= @user.first_name %> <%= @user.last_name %> </span></h3>
+  <div class="cards-container">
+    <% @userproducts.each do |product| %>
+      <div class="card m-3">
+      <% if product.images.present? %>
+        <%= cl_image_tag product.images[0].data, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag 'http://denrakaev.com/wp-content/uploads/2015/03/no-image-800x511.png', class: "card-img-top"%>
+      <% end %>
+      <div class="card-body p-2">
+        <h3 class="card-title"><%= link_to product.title, product_path(product) %></h3>
+        <p><%= product.description.first(100) %>...</p>
+        <p>€<%= product.daily_cost %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<!-- _booking_notification.html.erb -->
+
+
+    <% curr_products = current_user.products %>
+    <% curr_bookings = curr_products.map {|p| p.bookings } %>
+    <% if curr_bookings[0].any? {|b| b[:status] == 'pending'} %>
+      <i class="fas fa-dot-circle" style="color: red; margin-right: 5px;"></i>
+    <% end %>
+
