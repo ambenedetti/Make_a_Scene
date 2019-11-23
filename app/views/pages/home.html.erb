@@ -1,11 +1,28 @@
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">Find the attrezzo to make your movie</h1>
-      <hr class="divider my-4">
-    <p>The leading rental platform for antique props in the audiovisual industry</p>
-    <%= link_to products_path do %>
-    <button class="btn pink-button m-2 pr-2 pl-2" type="button">See all props</button>
-    <% end %>
-  </div>
-</div>
 
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+
+  <div class="carousel-inner">
+
+    <div class="carousel-item active slide-image1">
+      <div class="texto">
+      <h1 class="phrase">Find the attrezzo to make your movie</h1>
+          <hr class="divider my-4 color-white">
+        <h2 class="short-description">The leading rental platform for antique props in the audiovisual industry</h2>
+        <%= link_to products_path do %>
+        <button class="btn pink-button btn-homeboy" type="button">See all props</button>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="carousel-item slide-image2">
+      <div class="texto">
+        <h1 class="phrase">Turn classic theme parties into truly memorable displays</h1>
+        <h2 class="short-description">Collection of objects such as costumes, props and vintage technical equipment</h2>
+        <%= link_to products_path do %>
+        <button class="btn pink-button btn-homeboy" type="button">See all props</button>
+        <% end %>
+    </div>
+
+  </div>
+
+</div>

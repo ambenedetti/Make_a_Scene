@@ -2,27 +2,55 @@ body, html {
     height: 100%;
 }
 
-/* The hero image */
-.hero-image {
-  /* darken background effect to the image This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/594388/vinyl-record-player-retro-594388.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-
-  /* Set a specific height */
+.slide-image1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/594388/vinyl-record-player-retro-594388.jpeg");
   height: 100vh;
-
-  /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  // position: relative;
 }
 
-  /* Place text in the middle of the image */
-.hero-text {
+.slide-image2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/247929/pexels-photo-247929.jpeg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // position: relative;
+}
+
+.carousel-inner {
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+position: relative;
+}
+.texto {
+position: absolute;
+top: 40%;
+width: 50%;
+left: 25%;
+}
+
+.phrase {
   color: white;
+  font-style: bold;
+  // text-align: center;
+  // top: 40%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // position: absolute;
+
+}
+
+.short-description {
+
+
+  color: white;
+
+}
+
+.btn-homeboy {
+// align-items: center;
+
+
 }
